@@ -1,2 +1,7 @@
 # NearestTemplatePrediction
 Nearest neighbor prediction based on a list of marker genes
+
+Written by Yujin Hoshida
+
+Note that this module can be found in the GPARC Repository for installing on a GenePattern server
+http://gparc.org/view/urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00166:4
