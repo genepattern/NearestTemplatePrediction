@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="run_tests.local_mac" name="gpunit_runner">
+    <!-- Replace the following with the path to your GpUnit repository -->
+    <property name="gpunit.dir" value="/Users/eby/Documents/workspace/GenePattern/GpUnit" />
+    <target name="run_tests.local_mac">
+        <property name="gpunit.properties" value="gpunit.local_mac.properties" />
+        <ant antfile="${gpunit.dir}/build.xml" target="gpunit" />
+    </target>
+    <target name="run_tests.gpbeta">
+        <property name="gpunit.properties" value="gpunit.gpbeta.properties" />
+        <ant antfile="${gpunit.dir}/build.xml" target="gpunit" />
+    </target>
+    
+    <target name="clean">
+        <delete dir="test_runs" file="System.out" />
+    </target>
+</project>
