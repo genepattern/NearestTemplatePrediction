@@ -1,0 +1,23 @@
+#lsid=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00166:3
+#
+module: NearestTemplatePrediction
+params:
+       input.exp.filename: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/input/Train_Liver.gct"
+       input.features.filename: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/input/Hoshida_Survival_signature.txt"
+       output.name: "NTP"
+       distance.selection: "cosine"
+       weight.genes: "T"
+       num.resamplings: "1000"
+       GenePattern.output: "T"
+       random.seed: "7392854"
+assertions:
+        files:
+            "NTP_sorted.dataset.gct":
+                diff: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/output/valid_input_test/NTP_sorted.dataset.gct"
+            "NTP_sample_info.txt":
+                diff: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/output/valid_input_test/NTP_sample_info.txt"
+            "NTP_predicted_unsorted.cls":
+                diff: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/output/valid_input_test/NTP_predicted_unsorted.cls"
+            "NTP_predicted_sorted.cls":
+                diff: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/output/valid_input_test/NTP_predicted_sorted.cls"
+                
