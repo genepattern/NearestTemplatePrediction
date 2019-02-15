@@ -2,8 +2,8 @@
 #
 module: NearestTemplatePrediction
 params:
-       input.exp.filename: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/input/Train_Liver.gct"
-       input.features.filename: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/input/Hoshida_Survival_signature.txt"
+       input.exp.filename: "input/Train_Liver.gct"
+       input.features.filename: "input/Hoshida_Survival_signature.txt"
        output.name: "NTP"
        distance.selection: "cosine"
        weight.genes: "T"
@@ -13,11 +13,11 @@ params:
 assertions:
         files:
             "NTP_sorted.dataset.gct":
-                diff: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/output/valid_input_test/NTP_sorted.dataset.gct"
+                diff: "output/valid_input_test/NTP_sorted.dataset.gct"
             "NTP_sample_info.txt":
-                diff: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/output/valid_input_test/NTP_sample_info.txt"
+                diff: "output/valid_input_test/NTP_sample_info.txt"
             "NTP_predicted_unsorted.cls":
-                diff: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/output/valid_input_test/NTP_predicted_unsorted.cls"
+                diff: "output/valid_input_test/NTP_predicted_unsorted.cls"
             "NTP_predicted_sorted.cls":
-                diff: "ftp://gpftp.broadinstitute.org/gpunit/NearestTemplatePrediction/v4/output/valid_input_test/NTP_predicted_sorted.cls"
+                diff: "output/valid_input_test/NTP_predicted_sorted.cls"
                 
