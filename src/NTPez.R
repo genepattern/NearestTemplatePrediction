@@ -252,7 +252,6 @@ rnd.seed=7392854
     if (dist.selection=="cosine"){
       for (o in 1:num.cls){      # compute distance to all templates
         eval(parse(text=paste("current.temp <- temp.",o,sep="")))
-#        eval(parse(text=paste("current\.temp <- temp\.",o,sep="")))  ### for < R-2.4.0
         orig.dist.to.all.temp[o]<-sum(current.temp*current.sample)/
                   (sqrt(sum(current.temp^2))*sqrt(sum(current.sample^2)))
       }
@@ -260,21 +259,22 @@ rnd.seed=7392854
     if (dist.selection=="correlation"){
       for (o in 1:num.cls){      # compute distance to all templates
         eval(parse(text=paste("current.temp <- temp.",o,sep="")))
-#        eval(parse(text=paste("current\.temp <- temp\.",o,sep="")))  ### for < R-2.4.0
         orig.dist.to.all.temp[o] <- cor(current.temp,current.sample,method="pearson",use="complete.obs")
       }
     }
 
     if (num.cls==2){           # find nearest neighbor (2 classes)
-      if (orig.dist.to.all.temp[1]>=orig.dist.to.all.temp[2]){
-        predict.label[i]<-1
-        dist.to.template[i]<-1-orig.dist.to.all.temp[1]
-        dist.to.cls1[i]<--(orig.dist.to.all.temp[1]+1)
-      }
-      if (orig.dist.to.all.temp[1]<orig.dist.to.all.temp[2]){
-        predict.label[i]<-2
-        dist.to.template[i]<-1-orig.dist.to.all.temp[2]
-        dist.to.cls1[i]<-orig.dist.to.all.temp[2]+1
+      if ((is.na(orig.dist.to.all.temp[1])!=T) && (is.na(orig.dist.to.all.temp[2])!=T)){
+        if (orig.dist.to.all.temp[1]>=orig.dist.to.all.temp[2]){
+          predict.label[i]<-1
+          dist.to.template[i]<-1-orig.dist.to.all.temp[1]
+          dist.to.cls1[i]<--(orig.dist.to.all.temp[1]+1)
+        }
+        if (orig.dist.to.all.temp[1]<orig.dist.to.all.temp[2]){
+          predict.label[i]<-2
+          dist.to.template[i]<-1-orig.dist.to.all.temp[2]
+          dist.to.cls1[i]<-orig.dist.to.all.temp[2]+1
+        }
       }
     }
 
