@@ -1,0 +1,98 @@
+#NearestTemplatePrediction
+#Tue Jan 13 15:01:33 EST 2009
+JVMLevel=
+author=Yujin Hoshida (Broad Institute)
+commandLine=<R3.1_Rscript> <libdir>NTPez.R <input.exp.filename> <input.features.filename> <output.name> <distance.selection> <weight.genes> <num.resamplings> <GenePattern.output> <random.seed>
+cpuType=any
+description=Nearest neighbor prediction based on a list of marker genes
+fileFormat=gct;png;txt;xls;cls
+language=R-3.1.3
+name=NearestTemplatePrediction
+os=any
+
+p1_MODE=IN
+p1_TYPE=FILE
+p1_default_value=
+p1_description=Gene expression data set (.gct)
+p1_fileFormat=gct
+p1_name=input.exp.filename
+p1_optional=
+p1_prefix_when_specified=
+p1_type=java.io.File
+p1_value=
+
+p2_MODE=IN
+p2_TYPE=FILE
+p2_default_value=
+p2_description=List of marker genes (.txt)\: Probe ID, Gene name, Class (1,2,...), Weight (optional)
+p2_fileFormat=txt
+p2_name=input.features.filename
+p2_optional=
+p2_prefix_when_specified=
+p2_type=java.io.File
+p2_value=
+
+p3_default_value=NTP
+p3_description=Name for output files
+p3_fileFormat=
+p3_name=output.name
+p3_optional=
+p3_prefix_when_specified=
+p3_type=java.lang.String
+p3_value=
+
+p4_default_value=cosine
+p4_description=Distance metric
+p4_fileFormat=
+p4_name=distance.selection
+p4_optional=
+p4_prefix_when_specified=
+p4_type=java.lang.String
+p4_value=cosine\=cosine;correlation\=correlation
+
+p5_default_value=T
+p5_description=Weight genes? (by statistic, fold change, etc. only for 2 classes)
+p5_fileFormat=
+p5_name=weight.genes
+p5_optional=
+p5_prefix_when_specified=
+p5_type=java.lang.String
+p5_value=T\=yes;F\=no
+
+p6_default_value=1000
+p6_description=\# resampling to generate null distribution for distance metric
+p6_fileFormat=
+p6_name=num.resamplings
+p6_optional=
+p6_prefix_when_specified=
+p6_type=java.lang.Integer
+p6_value=
+
+p7_default_value=F
+p7_description=Create .gct and .cls files for GenePattern
+p7_fileFormat=
+p7_name=GenePattern.output
+p7_optional=
+p7_prefix_when_specified=
+p7_type=java.lang.String
+p7_value=T\=yes;F\=no
+
+p8_default_value=7392854
+p8_description=Random seed
+p8_fileFormat=
+p8_name=random.seed
+p8_optional=
+p8_prefix_when_specified=
+p8_type=java.lang.Integer
+p8_value=
+
+pipelineModel=
+privacy=public
+quality=preproduction
+taskDoc=doc.html
+requiredPatchLSIDs=
+requiredPatchURLs=
+serializedModel=
+taskType=Prediction
+userid=hoshida@broad.mit.edu
+version=Updated to use R-3.1 and added HTML documentation.
