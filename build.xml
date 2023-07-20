@@ -35,7 +35,7 @@
         <fileset dir="." includes="manifest, paramgroups.json, LICENSE, Dockerfile"/>
         <fileset dir="." includes="*.sh"/>
         <fileset dir="." includes="*.html"/>
-        <fileset dir="." includes="*.R"/>
+        <fileset dir="src" includes="*.R"/>
     </zip>
     <antcall target="postzip"/>
 </target>
