@@ -268,7 +268,7 @@ rnd.seed=7392854
         if (orig.dist.to.all.temp[1]>=orig.dist.to.all.temp[2]){
           predict.label[i]<-1
           dist.to.template[i]<-1-orig.dist.to.all.temp[1]
-          dist.to.cls1[i]<- -(orig.dist.to.all.temp[1]+1)
+          dist.to.cls1[i]<--(orig.dist.to.all.temp[1]+1)
         }
         if (orig.dist.to.all.temp[1]<orig.dist.to.all.temp[2]){
           predict.label[i]<-2
